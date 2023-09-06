@@ -1,12 +1,13 @@
 .filterContainer {
   position: relative;
+  margin-right: 20px;
 }
 
 .filterDisplay {
+  width: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 180px;
   padding: 15px;
   border-radius: 8px;
   background-color: var(--elements);
@@ -16,17 +17,24 @@
 
 .filterItemsContainer {
   position: absolute;
-  top: 54px;
-  left: 20px;
-  background-color: var(--elements);
-  border-radius: 8px;
+  top: 55px;
+  left: 0px;
   width: 180px;
-  padding: 15px;
+  margin: 0;
+  background-color: var(--elements);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid var(--elements);
+}
+
+.filter__filter-item {
+  padding: 12px 15px;
 }
 
 .filterDisplayContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -34,10 +42,39 @@
   background-color: var(--elements);
   border-radius: 5px;
   padding: 5px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   font-weight: 300;
   box-shadow: var(--box-shadow);
+}
+
+.filter__filter-item:hover {
+  background-color: var(--bg);
+}
+
+@media only screen and (min-width: 800px) {
+  .filterContainer {
+    margin-left: 20px;
+    margin-right: unset;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .filterDisplayContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .filterItemsContainer {
+    left: unset;
+    top: 55px;
+    right: 0px;
+  }
+
+  .filterDisplay {
+    margin-left: 0px;
+  }
+
+  .resetFilterButton {
+    font-size: 0.775rem;
+  }
 }

@@ -10,12 +10,7 @@ import RootLayout from "./layout/RootLayout";
 
 // pages
 import Main from "./components/Main";
-import Navbar from "./components/Navbar";
-import ThemeToggle from "./components/ThemeToggle";
-import Content from "./components/Content";
 import AboutCountry from "./components/AboutCountry";
-
-let data = require("./data.json");
 
 function App() {
   // gets the darkmode key on the localstorage for theme switching

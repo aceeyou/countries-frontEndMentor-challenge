@@ -1,7 +1,7 @@
 import React from "react";
 import "../theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faClose, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Search({ search, setSearch }) {
   const searchContainer = {
@@ -12,7 +12,7 @@ export default function Search({ search, setSearch }) {
   const searchBox = {
     display: "flex",
     alignItems: "center",
-    padding: "15px 20px",
+    padding: search ? "7px 20px" : "15px 20px",
     borderRadius: "8px",
     backgroundColor: "var(--elements)",
     boxShadow: "var(--box-shadow)",
@@ -31,6 +31,11 @@ export default function Search({ search, setSearch }) {
 
   const iconStyle = {
     color: "var(--text)",
+  };
+
+  const resetSearchBtn = {
+    padding: " 10px",
+    cursor: "pointer",
   };
   return (
     <div className="search-container" style={searchContainer}>
@@ -51,6 +56,11 @@ export default function Search({ search, setSearch }) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        {search && (
+          <button style={resetSearchBtn} onClick={() => setSearch("")}>
+            <FontAwesomeIcon icon={faClose} />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -11,49 +11,6 @@ export default function Filter({ filter, setFilter }) {
     setIsOpen(false);
   };
 
-  const filterContainer = {
-    position: "relative",
-    padding: "0 20px",
-  };
-
-  const filterDisplay = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "180px",
-    padding: "15px",
-    borderRadius: "8px",
-    backgroundColor: "var(--elements)",
-    cursor: "pointer",
-  };
-
-  const filterItemsContainer = {
-    position: "absolute",
-    top: "54px",
-    left: "20px",
-    backgroundColor: "var(--elements)",
-    borderRadius: "8px",
-    width: "180px",
-    padding: "15px",
-  };
-
-  const filterDisplayContainer = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  };
-
-  const resetFilterButton = {
-    backgroundColor: "var(--elements)",
-    borderRadius: "5px",
-    padding: "5px 10px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    fontWeight: "300",
-  };
-
   return (
     <div className="filterContainer" aria-label="region filter selector">
       <div className="filterDisplayContainer">
@@ -72,18 +29,11 @@ export default function Filter({ filter, setFilter }) {
             icon={faChevronDown}
           />
         </div>
-        {filter !== "Filter by region" && (
-          <button
-            className="resetFilterButton"
-            onClick={() => handleRegionSelect("Filter by region")}
-          >
-            reset filter
-          </button>
-        )}
       </div>
       {/* Regions */}
       {isOpen && (
         <div className="filterItemsContainer">
+          {/* <p className="filter__filter-item">hello</p> */}
           <FilterItems region="Africa" onRegionSelect={handleRegionSelect} />
           <FilterItems region="Americas" onRegionSelect={handleRegionSelect} />
           <FilterItems region="Asia" onRegionSelect={handleRegionSelect} />
@@ -96,13 +46,10 @@ export default function Filter({ filter, setFilter }) {
 }
 
 function FilterItems({ region, onRegionSelect }) {
-  const filterItem = {
-    padding: "5px",
-  };
   return (
     <p
+      className="filter__filter-item"
       role="button"
-      style={filterItem}
       aria-label="region filter item"
       onClick={() => onRegionSelect(region)}
     >

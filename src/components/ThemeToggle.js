@@ -15,7 +15,9 @@ export default function ThemeToggle({ onThemeSwitch }) {
       }}
     >
       <FontAwesomeIcon className="icon" icon={isDarkMode ? faSun : faMoon} />
-      <p>{isDarkMode ? "Light Mode" : "Dark Mode"}</p>
+      <p className="theme-toggle-text">
+        {isDarkMode ? "Light Mode" : "Dark Mode"}
+      </p>
     </button>
   );
 }

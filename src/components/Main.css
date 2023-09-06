@@ -10,22 +10,55 @@ main {
   opacity: 0.3;
 }
 
+.main__filter-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.reset-btn-container button {
+  background-color: var(--elements);
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  box-shadow: var(--box-shadow);
+}
+
 @media only screen and (min-width: 500px) {
   main {
     padding: 80px 50px 0;
   }
 }
 
-@media only screen and (min-width: 1440px) {
-  main {
-    padding: 80px 80px 0;
-  }
-
+@media only screen and (min-width: 800px) {
   .desktop__search-filter-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 10px;
+  }
+
+  .search-box {
+    width: 400px;
+  }
+
+  .main__filter-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .search-box {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  main {
+    padding: 80px 80px 0;
   }
 
   .desktop__search-group {
@@ -41,28 +74,8 @@ main {
   .search-input {
     margin-left: 50px;
   }
+
   .search-icon {
     padding: 0 10px;
-  }
-
-  .filterDisplayContainer {
-    flex-direction: row-reverse;
-    margin-top: 25px;
-  }
-
-  .filterSelector {
-    margin-left: 30px;
-  }
-
-  .filterItemsContainer {
-    left: 40px;
-  }
-
-  .filterDisplay {
-    margin-left: 20px;
-  }
-
-  .resetFilterButton {
-    font-size: 0.775rem;
   }
 }

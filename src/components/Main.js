@@ -13,28 +13,38 @@ export default function Main() {
   const [countries, setCountries] = useState(data);
 
   useEffect(() => {
-    setSearch("");
-    if (filter === "Filter by region") setCountries(data);
-    else {
-      setCountries(data);
-      setCountries((listOfCountries) =>
-        listOfCountries.filter((country) => country.region === filter)
-      );
-    }
-  }, [filter]);
-
-  useEffect(() => {
-    setFilter("Filter by region");
-    if (search === "") setCountries(data);
-    else {
-      setCountries(data);
+    setCountries(data);
+    if (search) {
       setCountries((listOfCountries) =>
         listOfCountries.filter((country) =>
           country.name.toLowerCase().includes(search.toLowerCase())
         )
       );
     }
+
+    if (filter === "Filter by region") setCountries(data);
+    else {
+      setCountries((listOfCountries) =>
+        listOfCountries.filter((country) => country.region === filter)
+      );
+    }
+  }, [filter, search]);
+
+  useEffect(() => {
+    setCountries(data);
+    // else {
+    setCountries((listOfCountries) =>
+      listOfCountries.filter((country) =>
+        country.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+    // }
   }, [search]);
+
+  const handleResetFilters = () => {
+    setFilter("Filter by region");
+    setSearch("");
+  };
 
   const queryResultsStyle = {
     textAlign: "center",
@@ -55,7 +65,14 @@ export default function Main() {
             </div>
           )}
         </div>
-        <Filter filter={filter} setFilter={setFilter} />
+        <div className="main__filter-container">
+          {filter !== "Filter by region" && (
+            <div className="reset-btn-container">
+              <button onClick={() => handleResetFilters()}>reset filter</button>
+            </div>
+          )}
+          <Filter filter={filter} setFilter={setFilter} />
+        </div>
       </div>
 
       <Content data={countries} />

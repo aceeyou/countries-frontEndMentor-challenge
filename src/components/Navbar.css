@@ -31,7 +31,7 @@ button {
   background-color: transparent;
 }
 
-p {
+p.theme-toggle-text {
   margin-left: 8px;
 }
 
