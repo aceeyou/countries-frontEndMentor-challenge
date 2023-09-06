@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
+
+// layout
+import RootLayout from "./layout/RootLayout";
+
+// pages
+import Main from "./components/Main";
+import Navbar from "./components/Navbar";
+import ThemeToggle from "./components/ThemeToggle";
+import Content from "./components/Content";
+import AboutCountry from "./components/AboutCountry";
+
+let data = require("./data.json");
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  // gets the darkmode key on the localstorage for theme switching
+  let darkMode = localStorage.getItem("darkmode");
+
+  const handleSetDarkMode = () => {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("darkmode", "enabled");
+  };
+
+  const handleSetLightMode = () => {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("darkmode", null);
+  };
+
+  if (darkMode === "enabled") handleSetDarkMode();
+  const handleSwitchTheme = () => {
+    darkMode = localStorage.getItem("darkmode");
+    if (darkMode !== "enabled") {
+      handleSetDarkMode();
+    } else {
+      handleSetLightMode();
+    }
+  };
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route
+        path="/"
+        element={<RootLayout onThemeSwitch={handleSwitchTheme} />}
+      >
+        <Route index element={<Main />} />
+        <Route path="country/:alpha3code" element={<AboutCountry />} />
+      </Route>
+    )
   );
+
+  return <RouterProvider router={router} />;
 }
+// <Navbar>
+//   <ThemeToggle onThemeSwitch={handleSwitchTheme} />
+// </Navbar>
+// <Main />
 
 export default App;

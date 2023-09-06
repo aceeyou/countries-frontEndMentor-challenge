@@ -1,0 +1,62 @@
+@import "../theme.css";
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: var(--elements);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px;
+  z-index: 99;
+}
+
+h1 {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+p {
+  margin-left: 8px;
+}
+
+@media only screen and (min-width: 500px) {
+  nav {
+    padding: 25px 50px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  nav {
+    padding: 25px 50px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  nav {
+    padding: 25px 80px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}

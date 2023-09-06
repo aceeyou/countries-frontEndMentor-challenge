@@ -1,0 +1,29 @@
+:root {
+  /* light mode colors */
+  --Very-Dark-Blue: hsl(200, 15%, 8%); /* text */
+  --Dark-Gray: hsl(0, 0%, 52%); /* input */
+  --Very-Light-Gray: hsl(0, 0%, 98%); /* background */
+
+  --White: hsl(0, 0%, 100%); /* elements */
+
+  --box-shadow: 0 2px 4px rgb(230, 229, 229);
+
+  /* global usage */
+  --text: var(--Very-Dark-Blue);
+  --input: var(--Dark-Gray);
+  --bg: var(--Very-Light-Gray);
+  --elements: var(--White);
+}
+
+.dark-mode {
+  --Dark-Blue: hsl(209, 23%, 22%); /* elements */
+  --Very-Dark-Blue: hsl(207, 26%, 17%); /* background */
+  --box-shadow: 0 2px 4px hsl(206, 9%, 15%);
+
+  --White: hsl(0, 0%, 100%); /* text */
+
+  /* global usage */
+  --text: var(--White);
+  --bg: var(--Very-Dark-Blue);
+  --elements: var(--Dark-Blue);
+}

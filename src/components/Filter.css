@@ -1,0 +1,43 @@
+.filterContainer {
+  position: relative;
+}
+
+.filterDisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 180px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--elements);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+.filterItemsContainer {
+  position: absolute;
+  top: 54px;
+  left: 20px;
+  background-color: var(--elements);
+  border-radius: 8px;
+  width: 180px;
+  padding: 15px;
+}
+
+.filterDisplayContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resetFilterButton {
+  background-color: var(--elements);
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 300;
+  box-shadow: var(--box-shadow);
+}
