@@ -39,14 +39,14 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route
-        path="/"
+        path="/countries-frontEndMentor-challenge"
         element={<RootLayout onThemeSwitch={handleSwitchTheme} />}
       >
+        <Route index element={<Main />} />
         <Route
-          index
-          element={<RootLayout onThemeSwitch={handleSwitchTheme} />}
+          path="/countries-frontEndMentor-challenge/country/:alpha3code"
+          element={<AboutCountry />}
         />
-        <Route path="country/:alpha3code" element={<AboutCountry />} />
       </Route>
     )
   );

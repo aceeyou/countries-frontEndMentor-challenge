@@ -10,7 +10,7 @@ export default function Content({ data }) {
       {data?.map((country, i) => (
         <Link
           key={i}
-          to={`country/${country.alpha3Code}`}
+          to={`/countries-frontEndMentor-challenge/country/${country.alpha3Code}`}
           state={{ country: country, countries: data }}
         >
           <Country country={country} />

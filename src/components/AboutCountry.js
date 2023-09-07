@@ -9,7 +9,10 @@ export default function AboutCountry() {
   return (
     <main className="main__about-country">
       <div className="back-button">
-        <Link to="/" className="back-button-link">
+        <Link
+          to="/countries-frontEndMentor-challenge"
+          className="back-button-link"
+        >
           <FontAwesomeIcon className="icon__back-btn" icon={faArrowLeftLong} />
           <p>Back</p>
         </Link>
