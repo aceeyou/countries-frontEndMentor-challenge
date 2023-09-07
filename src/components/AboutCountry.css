@@ -194,18 +194,18 @@
   .bordering-countries-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-left: unset;
   }
 
   .border-countries-text {
     width: max-content;
     vertical-align: middle;
+    transform: translateY(5px);
   }
 
   .countries-container-items {
     margin-left: 10px;
-    transform: translateY(12px);
   }
 }
