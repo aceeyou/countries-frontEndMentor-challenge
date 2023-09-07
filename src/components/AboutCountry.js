@@ -18,11 +18,13 @@ export default function AboutCountry() {
         </Link>
       </div>
       <div className="about__country">
-        <img
-          src={state.country.flags.svg}
-          alt={`${state.country.name} flag`}
-          width="100%"
-        />
+        <div className="country-flag-container">
+          <img
+            src={state.country.flags.svg}
+            alt={`${state.country.name} flag`}
+            width="100%"
+          />
+        </div>
 
         <div className="about__country-description">
           <h1>{state.country.name}</h1>
