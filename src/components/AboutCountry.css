@@ -114,6 +114,7 @@
 
   .about__country-description {
     margin: auto 0;
+    padding-right: 60px;
   }
 }
 
