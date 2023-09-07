@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/countries-frontEndMentor-challenge/static/css/main.891e8b59.css",
+    "main.css": "/countries-frontEndMentor-challenge/static/css/main.836aeb89.css",
     "main.js": "/countries-frontEndMentor-challenge/static/js/main.a08df8d8.js",
     "index.html": "/countries-frontEndMentor-challenge/index.html",
-    "main.891e8b59.css.map": "/countries-frontEndMentor-challenge/static/css/main.891e8b59.css.map",
+    "main.836aeb89.css.map": "/countries-frontEndMentor-challenge/static/css/main.836aeb89.css.map",
     "main.a08df8d8.js.map": "/countries-frontEndMentor-challenge/static/js/main.a08df8d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.891e8b59.css",
+    "static/css/main.836aeb89.css",
     "static/js/main.a08df8d8.js"
   ]
 }
