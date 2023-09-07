@@ -42,7 +42,10 @@ function App() {
         path="/"
         element={<RootLayout onThemeSwitch={handleSwitchTheme} />}
       >
-        <Route index element={<Main />} />
+        <Route
+          index
+          element={<RootLayout onThemeSwitch={handleSwitchTheme} />}
+        />
         <Route path="country/:alpha3code" element={<AboutCountry />} />
       </Route>
     )
